@@ -1,0 +1,19 @@
+Purpose: a local, client-side 3D graphics simulation where objects move according to defined behaviors. 
+
+The object properties include shape, color, size, position, and movement behavior. Movement can be a defined path, following another object, or orbiting. 
+
+The user interface consists of a web browser-based 3D rendering panel, a chat-like command interface, and a status panel for messages. 
+
+Commands allow adding, modifying, and controlling objects. 
+
+Help is available though the command line as in linux (e.g. start --help). 
+
+There is error handling for invalid commands and command history navigation. 
+
+Configuration includes arena size and frame rate. 
+
+The logic will be modular, initially in JavaScript and three.js, but allowing future extension, such as swapping in a more powerful backend. The entire application will run on the user's computer.
+
+We will allow exporting and importing scripts to restore states. 
+
+Testing will involve sample scripts to validate the system.

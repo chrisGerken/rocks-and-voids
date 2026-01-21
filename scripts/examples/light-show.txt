@@ -1,0 +1,31 @@
+# Light Show Demo
+# Demonstrates oscillating lights
+
+# Central beacon
+place large white sphere named "beacon" at (0,0,0)
+beacon -still
+beacon -emits light -intensity 2.0 -oscillates -period 3s
+
+# Colored lights in a ring
+place medium red sphere named "red-light" at (150,0,0)
+red-light -orbits beacon -period 15s
+red-light -emits light -intensity 1.0 -oscillates -period 1s
+
+place medium green sphere named "green-light" at (0,0,150)
+green-light -orbits beacon -period 15s
+green-light -emits light -intensity 1.0 -oscillates -period 1.5s
+
+place medium blue sphere named "blue-light" at (-150,0,0)
+blue-light -orbits beacon -period 15s
+blue-light -emits light -intensity 1.0 -oscillates -period 2s
+
+place medium yellow sphere named "yellow-light" at (0,0,-150)
+yellow-light -orbits beacon -period 15s
+yellow-light -emits light -intensity 1.0 -oscillates -period 2.5s
+
+# Camera orbits the scene
+camera position 0 200 300
+camera -orbits beacon -period 45s
+camera lookat beacon
+
+start

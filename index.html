@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rocks and Voids</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div id="app">
+        <div id="render-panel">
+            <canvas id="render-canvas"></canvas>
+        </div>
+        <div id="side-panel">
+            <div id="status-panel">
+                <div id="status-messages"></div>
+            </div>
+            <div id="command-panel">
+                <div id="command-history"></div>
+                <div id="command-input-container">
+                    <span id="command-prompt">&gt;</span>
+                    <input type="text" id="command-input" placeholder="Enter command..." autocomplete="off" spellcheck="false">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- three.js from CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+    <!-- Application modules -->
+    <script src="js/config/defaults.js"></script>
+    <script src="js/core/EventBus.js"></script>
+    <script src="js/utils/ColorUtils.js"></script>
+    <script src="js/utils/VectorUtils.js"></script>
+    <script src="js/utils/TimeUtils.js"></script>
+    <script src="js/core/ObjectRegistry.js"></script>
+    <script src="js/core/Arena.js"></script>
+    <script src="js/objects/SimObject.js"></script>
+    <script src="js/objects/shapes/Sphere.js"></script>
+    <script src="js/objects/shapes/Cube.js"></script>
+    <script src="js/objects/shapes/Pyramid.js"></script>
+    <script src="js/objects/shapes/ShapeFactory.js"></script>
+    <script src="js/objects/lighting/ObjectLight.js"></script>
+    <script src="js/objects/Camera.js"></script>
+    <script src="js/behaviors/Behavior.js"></script>
+    <script src="js/behaviors/StillBehavior.js"></script>
+    <script src="js/behaviors/OrbitBehavior.js"></script>
+    <script src="js/behaviors/FollowBehavior.js"></script>
+    <script src="js/behaviors/BehaviorManager.js"></script>
+    <script src="js/commands/CommandParser.js"></script>
+    <script src="js/commands/CommandHistory.js"></script>
+    <script src="js/commands/HelpGenerator.js"></script>
+    <script src="js/commands/commands/PlaceCommand.js"></script>
+    <script src="js/commands/commands/CameraCommand.js"></script>
+    <script src="js/commands/commands/StartCommand.js"></script>
+    <script src="js/commands/commands/StopCommand.js"></script>
+    <script src="js/commands/commands/ResetCommand.js"></script>
+    <script src="js/commands/commands/ClearCommand.js"></script>
+    <script src="js/commands/commands/ConfigCommand.js"></script>
+    <script src="js/commands/commands/ImportCommand.js"></script>
+    <script src="js/commands/CommandRegistry.js"></script>
+    <script src="js/core/Simulation.js"></script>
+    <script src="js/ui/StatusPanel.js"></script>
+    <script src="js/ui/CommandPanel.js"></script>
+    <script src="js/ui/RenderPanel.js"></script>
+    <script src="js/ui/UIManager.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

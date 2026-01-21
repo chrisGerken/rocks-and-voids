@@ -1,0 +1,27 @@
+# Follow Behavior Demo
+# Demonstrates objects following other objects
+
+# Create a leader that orbits the center
+place medium green cube named "leader" at (100,0,0)
+leader -orbits center -period 20s
+
+# Create a reference point at center
+place small white sphere named "center" at (0,0,0)
+center -still
+center -emits light -intensity 0.5
+
+# Create followers
+place small red sphere named "follower1" at (200,50,0)
+follower1 -follows leader -distance 30
+
+place small blue sphere named "follower2" at (-100,0,200)
+follower2 -follows follower1 -distance 25
+
+place small yellow sphere named "follower3" at (0,100,-150)
+follower3 -follows follower2 -distance 20
+
+# Camera follows the chain
+camera position 0 300 400
+camera lookat leader
+
+start

@@ -1,0 +1,192 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    background: #1a1a2e;
+    color: #eee;
+}
+
+#app {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
+/* 3D Render Panel */
+#render-panel {
+    flex: 1;
+    position: relative;
+    background: #000;
+    min-width: 0;
+}
+
+#render-canvas {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* Side Panel (Status + Command) */
+#side-panel {
+    width: 400px;
+    min-width: 300px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    background: #16213e;
+    border-left: 2px solid #0f3460;
+}
+
+/* Status Panel */
+#status-panel {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    border-bottom: 2px solid #0f3460;
+    min-height: 100px;
+}
+
+#status-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.status-message {
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    line-height: 1.4;
+}
+
+.status-message.info {
+    background: #1a1a2e;
+    color: #94a3b8;
+}
+
+.status-message.success {
+    background: #064e3b;
+    color: #6ee7b7;
+}
+
+.status-message.error {
+    background: #7f1d1d;
+    color: #fca5a5;
+}
+
+.status-message.warning {
+    background: #78350f;
+    color: #fcd34d;
+}
+
+.status-message.help {
+    background: #1e3a5f;
+    color: #7dd3fc;
+    white-space: pre-wrap;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+}
+
+/* Command Panel */
+#command-panel {
+    display: flex;
+    flex-direction: column;
+    max-height: 50%;
+    min-height: 150px;
+}
+
+#command-history {
+    flex: 1;
+    overflow-y: auto;
+    padding: 10px;
+    background: #0f0f23;
+}
+
+.command-entry {
+    margin-bottom: 8px;
+}
+
+.command-entry .prompt {
+    color: #00d9ff;
+}
+
+.command-entry .input {
+    color: #fff;
+}
+
+.command-entry .response {
+    color: #94a3b8;
+    padding-left: 15px;
+    margin-top: 3px;
+}
+
+#command-input-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background: #0a0a1a;
+    border-top: 1px solid #0f3460;
+}
+
+#command-prompt {
+    color: #00d9ff;
+    margin-right: 8px;
+    font-weight: bold;
+}
+
+#command-input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+#command-input::placeholder {
+    color: #4a5568;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a2e;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #0f3460;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #1a4a7a;
+}
+
+/* Responsive */
+@media (max-width: 800px) {
+    #app {
+        flex-direction: column;
+    }
+
+    #side-panel {
+        width: 100%;
+        max-width: none;
+        height: 40%;
+        border-left: none;
+        border-top: 2px solid #0f3460;
+    }
+
+    #render-panel {
+        height: 60%;
+    }
+}

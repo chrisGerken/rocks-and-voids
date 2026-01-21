@@ -1,0 +1,26 @@
+# Solar System Demo
+# A simple demonstration of orbital mechanics
+
+# Create the sun at the center
+place large yellow sphere named "sun" at (0,0,0)
+sun -still
+sun -emits light -intensity 1.5
+
+# Create Earth orbiting the sun
+place small blue sphere named "earth" at (200,0,0)
+earth -orbits sun -period 30s
+
+# Create the Moon orbiting Earth
+place small gray sphere named "moon" at (220,0,0)
+moon -orbits earth -period 5s
+
+# Create Mars with a longer orbit
+place small red sphere named "mars" at (350,0,0)
+mars -orbits sun -period 60s
+
+# Set up camera to watch the system
+camera position 0 400 500
+camera lookat sun
+
+# Start the simulation
+start

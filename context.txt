@@ -1,0 +1,1 @@
+read README.md and ARCHITECTURE.md to get context for this session
